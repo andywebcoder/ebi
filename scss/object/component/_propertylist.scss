@@ -1,0 +1,292 @@
+@use'../../foundation/variables' as v;
+
+.propertylist {
+    &-block {
+        margin-bottom: 40px;
+
+        @include v.pc {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            margin-bottom: 8px;
+            font-size: 16px;
+
+            @include v.tab {
+                font-size: 18px;
+            }
+
+            @include v.lt {
+                font-size: 20px;
+                margin-bottom: 16px;
+            }
+
+            @include v.pc {
+                margin-bottom: 40px;
+            }
+
+            span {
+                color: v.$text-price;
+            }
+        }
+
+        .contact-property_discription {
+            margin-bottom: 4px;
+            margin-left: 12px;
+            font-size: 12px;
+
+            @include v.tab {
+                margin-bottom: 8px;
+            }
+
+            @include v.pc {
+                margin-bottom: 16px;
+            }
+        }
+    }
+
+    li {
+        display: flex;
+        align-items: center;
+    }
+
+    .bg-round {
+        margin: 0 auto 24px;
+        padding: 0;
+        max-width: none;
+
+        @include v.pc {
+            margin: 0 auto 32px;
+        }
+    }
+
+    &-check {
+        display: flex;
+        align-items: center;
+        padding: 0 12px;
+        height: 40px;
+    }
+
+    &-information {
+        font-size: 13px;
+        padding: 16px;
+        border-left: 1px solid v.$border-dark;
+
+        @include v.lt {
+            font-size: 14px;
+            padding: 24px;
+        }
+
+        @include v.pc {
+            padding: 24px 32px;
+        }
+    }
+
+    h3 {
+        font-size: 16px;
+        margin-bottom: 12px;
+        padding: 0 0 8px;
+
+        @include v.tab {
+            display: flex;
+            margin-bottom: 12px;
+            padding: 0 0 4px;
+        }
+
+        @include v.lt {
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+
+        @include v.pc {
+            font-size: 20px;
+        }
+    }
+
+    &-label {
+        gap: 8px;
+        margin-bottom: 8px;
+
+        @include v.tab {
+            margin-right: 8px;
+            margin-bottom: 0;
+        }
+
+        @include v.lt {
+            gap: 12px;
+            margin-right: 12px;
+        }
+    }
+
+    &-flex {
+        @include v.tab {
+            display: flex;
+            gap: 24px;
+        }
+
+        img {
+            width: 100px;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 4px;
+
+            @include v.tab {
+                width: 20%;
+                height: 100%;
+                max-width: 160px;
+            }
+
+            @include v.pc {
+                max-width: 180px;
+            }
+        }
+    }
+
+    &-table {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 8px;
+
+        @include v.tab {
+            width: 40%;
+        }
+
+        @include v.lt {
+            width: 50%;
+        }
+
+        div {
+            width: 100%;
+            padding: 4px 0;
+            border-bottom: 1px solid v.$border-dark;
+
+            &:first-child {
+                padding-top: 0;
+            }
+        }
+
+        dt {
+            font-weight: 600;
+            width: 30%;
+            max-width: 80px;
+
+            @include v.tab {
+                width: 40%;
+            }
+
+            @include v.lt {
+                width: 35%;
+            }
+        }
+
+        dd {
+            width: 70%;
+
+            @include v.tab {
+                width: 60%;
+            }
+
+            @include v.lt {
+                width: 65%;
+            }
+        }
+
+        span {
+            display: block;
+        }
+
+        &_price {
+            color: v.$text-price;
+            font-weight: 600;
+
+            @include v.lt {
+                font-size: 18px;
+            }
+        }
+
+        &_double {
+            @include v.lt {
+                width: 50% !important;
+            }
+        }
+    }
+
+    &-access {
+        @include v.tab {
+            width: 40%;
+        }
+
+        @include v.lt {
+            width: 30%;
+        }
+
+        li {
+            display: flex;
+            margin-bottom: 4px;
+
+            @include v.lt {
+                margin-bottom: 8px;
+            }
+
+            img {
+                position: relative;
+                width: 16px;
+                height: 16px;
+                top: 2px;
+                margin-right: 2px;
+
+                @include v.lt {
+                    top: 3px;
+                    margin-right: 4px;
+                }
+            }
+
+            a {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &-open {
+        text-align: right;
+
+        a {
+            @include v.tab {
+                margin: 0;
+            }
+        }
+    }
+
+    &-none {
+        text-align: center;
+        background-color: v.$base-white;
+        padding: 24px;
+
+        @include v.lt {
+            padding: 32px;
+        }
+
+        h2 {
+            font-size: 16px;
+            margin-bottom: 16px;
+
+            @include v.tab {
+                font-size: 18px;
+            }
+
+            @include v.lt {
+                font-size: 18px;
+            }
+
+            @include v.pc {
+                font-size: 24px;
+                margin-bottom: 24px;
+            }
+
+        }
+
+        p {
+            font-size: 14px;
+        }
+    }
+}

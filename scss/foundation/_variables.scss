@@ -1,0 +1,160 @@
+// font
+@font-face {
+    font-family: "FOT-TsukuGoPro";
+    src: url("/assets/fonts/FOT-TsukuGoPro-B.otf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "FOT-TsukuOldGothicStd";
+    src: url("/assets/fonts/FOT-TsukuOldGothicStd-B.otf");
+    font-weight: bold;
+}
+
+//フォント
+$TsukuGoPro : 'FOT-TsukuGoPro',
+sans-serif;
+
+$TsukuOldGothic: 'FOT-TsukuOldGothicStd',
+sans-serif;
+
+
+
+
+
+
+
+// color
+$text-red: #F02D1B;
+$text-pink: #F77D79;
+
+$bg-pink: #FAD6DA;
+$bg-blue: #6CA7FF;
+$bg-white: #FFF9F4;
+
+
+
+
+
+
+//Brand Color
+$main-blue: #1B4C92;
+$sub-blue: #26A7D6;
+$main-navy: #17233E;
+$base-white: #FFF;
+$accent-yellow: #F6924D;
+$accent-pink: #FD7A88;
+
+// TextColor
+$text-dark: #17233E;
+$text-normal: #454F65;
+$text-right: #8B919F;
+$text-price: #E83024;
+$text-error: #A50E04;
+
+// BorderColor
+$border-right: #E6E6E6;
+$border-dark: #D1D1D1;
+
+// BackgroundColor
+$bg-gray: #F8F8F9;
+$bg-gray-dark: #E8E9EC;
+
+
+// Other
+$ur: #86064D;
+$jkk: #FDD000;
+$new: #F38332;
+$link-blue: #1D6994;
+$yokohama: #694CF7;
+$minkan: #BB8C4A;
+$other: #454F65;
+
+
+// filterでSVG画像を任意の色に変更する
+$filter-main-blue: brightness(0) saturate(100%) invert(23%) sepia(71%) saturate(1255%) hue-rotate(190deg) brightness(92%) contrast(94%);
+$filter-main-navy: brightness(0) saturate(100%) invert(11%) sepia(54%) saturate(864%) hue-rotate(185deg) brightness(91%) contrast(93%);
+$filter-base-white: invert(99%) sepia(4%) saturate(853%) hue-rotate(243deg) brightness(114%) contrast(100%);
+$filter-sub-blue: brightness(0) saturate(100%) invert(57%) sepia(95%) saturate(726%) hue-rotate(160deg) brightness(87%) contrast(92%);
+$filter-accent-pink: invert(63%) sepia(45%) saturate(1132%) hue-rotate(307deg) brightness(100%) contrast(106%);
+$filter-text-dark: invert(10%) sepia(9%) saturate(7038%) hue-rotate(194deg) brightness(96%) contrast(91%);
+$filter-text-normal: brightness(0) saturate(100%) invert(28%) sepia(39%) saturate(319%) hue-rotate(182deg) brightness(95%) contrast(90%);
+$filter-text-right: brightness(0) saturate(100%) invert(61%) sepia(13%) saturate(292%) hue-rotate(184deg) brightness(91%) contrast(91%);
+$filter-link-blue:invert(33%) sepia(20%) saturate(1750%) hue-rotate(158deg) brightness(101%) contrast(91%);
+$filter-border-dark:brightness(0) saturate(100%) invert(98%) sepia(0%) saturate(0%) hue-rotate(156deg) brightness(88%) contrast(89%);
+$filter-ur:brightness(0) saturate(100%) invert(9%) sepia(71%) saturate(4448%) hue-rotate(314deg) brightness(101%) contrast(103%);
+$filter-jkk:brightness(0) saturate(100%) invert(86%) sepia(39%) saturate(3977%) hue-rotate(360deg) brightness(105%) contrast(105%);
+$filter-minkan:brightness(0) saturate(100%) invert(62%) sepia(45%) saturate(537%) hue-rotate(356deg) brightness(86%) contrast(81%);
+$filter-yokohama:brightness(0) saturate(100%) invert(31%) sepia(71%) saturate(4568%) hue-rotate(241deg) brightness(99%) contrast(96%);
+$filter-other:brightness(0) saturate(100%) invert(30%) sepia(16%) saturate(805%) hue-rotate(183deg) brightness(89%) contrast(87%);
+//グラデーション
+
+
+
+//フォント
+$gothic :'Montserrat',
+"Helvetica Neue",
+"Helvetica",
+"Hiragino Sans",
+"Hiragino Kaku Gothic ProN",
+"Arial",
+"Yu Gothic",
+"Meiryo",
+sans-serif;
+
+
+//box-shadow
+$shadow: 0px 0px 8px 0px #17233e1a;
+
+//メディアクエリ
+$sp: 767px;
+$tab: 768px;
+$lt: 1024px;
+$pc: 1280px;
+
+
+@mixin pc {
+    @media (min-width: ($pc)) {
+        @content;
+    }
+}
+
+@mixin lt {
+    @media (min-width: ($lt)) {
+        @content;
+    }
+}
+
+@mixin tab {
+    @media (min-width: ($tab)) {
+        @content;
+    }
+}
+
+@mixin sp {
+    @media (max-width: ($sp)) {
+        @content;
+    }
+}
+
+
+//ページ内スクロールバーの表示
+@mixin scrollbar {
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    /*スクロールバーの背景色・角丸指定*/
+    &::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background: $bg-gray;
+        margin-bottom: 4px;
+    }
+
+    /*スクロールバーの色・角丸指定*/
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: $text-right;
+        border: solid 4px transparent;
+    }
+}

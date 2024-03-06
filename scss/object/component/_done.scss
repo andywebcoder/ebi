@@ -1,0 +1,55 @@
+@use "../../foundation/variables" as v;
+
+.done {
+    text-align: center;
+    padding: 40px 0;
+
+    @include v.tab {
+        padding: 60px 0;
+    }
+
+    @include v.lt {
+        padding: 80px 0;
+    }
+
+    &-height {
+        min-height: 100vh;
+
+        @include v.lt {
+            min-height: auto;
+        }
+    }
+
+    h2,
+    p {
+        margin-bottom: 20px;
+
+        @include v.tab {
+            margin-bottom: 30px;
+        }
+
+        @include v.lt {
+            margin-bottom: 40px;
+        }
+    }
+
+    h2 {
+        font-size: 16px;
+
+        @include v.tab {
+            font-size: 18px;
+        }
+
+        @include v.lt {
+            font-size: 20px;
+        }
+    }
+
+    p {
+        font-size: 14px;
+
+        @include v.lt {
+            font-size: 16px;
+        }
+    }
+}

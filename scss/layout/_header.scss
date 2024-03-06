@@ -1,0 +1,276 @@
+@use'../foundation/variables' as v;
+@use "sass:color";
+
+header {
+    background-color: v.$base-white;
+    border-bottom: 1px solid v.$border-right;
+}
+
+
+.header {
+
+    &-logo{
+        width: 135px;
+    }
+    &-flex {
+        justify-content: space-between;
+
+        @include v.tab {
+            padding: 8px 0;
+        }
+    }
+    
+
+    &-left {
+
+        @include v.tab {
+            gap: 16px;
+        }
+
+        @include v.lt {
+            gap: 24px;
+
+        }
+
+    }
+
+    #header-search {
+        display: none;
+
+        @include v.tab {
+            display: block;
+            width: 242px;
+        }
+    }
+
+    &-search {
+        @include v.tab {
+            display: flex;
+            position: relative;
+            line-height: 24px;
+
+            &::before {
+                content: "";
+                background-image: url("/assets/img/icon/search.svg");
+                background-size: 24px;
+                display: block;
+                width: 24px;
+                height: 24px;
+                position: absolute;
+                left: 4px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            &:hover {
+                & input[type="submit"] {
+                    background-color: v.$main-navy;
+                }
+
+                & input[type="text"] {
+                    border-color: v.$main-navy;
+                }
+            }
+
+            & input[type="text"] {
+                border: 2px solid v.$link-blue;
+                border-bottom-left-radius: 4px;
+                border-top-left-radius: 4px;
+                padding: 4px 0 4px 28px;
+                width: 100%;
+                font-size: 12px;
+
+                &::placeholder {
+                    color: v.$text-right;
+                }
+
+
+            }
+
+            & input[type="submit"] {
+                background: v.$link-blue;
+                color: v.$base-white;
+                font-size: 12px;
+                padding: 8px 16px;
+                border-bottom-right-radius: 4px;
+                border-top-right-radius: 4px;
+
+
+            }
+
+        }
+
+    }
+
+    &-links {
+        gap: 8px;
+        line-height: 1.0;
+
+        &_fav,
+        &_history {
+            font-size: 10px;
+            gap: 4px;
+            padding: 16px 0 8px;
+            width: 50px;
+            color: v.$text-normal;
+
+            @include v.tab {
+                width: 70px;
+                border: 1px solid v.$border-right;
+                padding: 12px 0 4px;
+                border-radius: 8px;
+                box-shadow: 0px 1.75px 0px 0px rgba(0, 0, 0, 0.10);
+                position: relative;
+                top: 0;
+                transition: .1s all;
+
+                &:hover {
+                    box-shadow: none;
+                    top: 1.75px;
+                }
+
+            }
+            >div{
+                position: relative;
+            }
+        }
+
+        &_fav {
+            @include v.tab {
+                &:hover {
+                    background: rgba(v.$accent-pink, 0.05);
+                }
+            }
+        }
+
+        &_history {
+            @include v.tab {
+                &:hover {
+                    background: rgba(v.$main-blue, 0.05);
+                }
+            }
+        }
+    }
+
+
+
+    &-modal {
+        display: none;
+
+        // 片桐コメント
+        // 後日ボタンScssに移行予定
+        &_contact {
+            display: none;
+
+            @include v.tab {
+                background-color: v.$accent-yellow;
+                display: block;
+                text-align: center;
+                flex: 1;
+                line-height: 58px;
+                padding: 0 24px;
+                border-radius: 8px;
+                font-size: 14px;
+                box-shadow: v.$shadow;
+                color: v.$base-white;
+                transition: .3s all;
+
+                &:hover {
+                    background: color.scale(v.$accent-yellow, $lightness: -20%);
+
+                }
+            }
+
+            @include v.lt {
+                width: 180px;
+            }
+        }
+    }
+
+    &-nav {
+        display: none;
+
+        @include v.tab {
+            display: block;
+            background-color: v.$main-navy;
+        }
+
+        &_list {
+            justify-content: space-between;
+            align-items: center;
+
+            li {
+
+                flex: 1;
+                position: relative;
+
+                &::before {
+                    content: "";
+                    width: 1px;
+                    height: 40px;
+                    display: block;
+                    background-color: v.$base-white;
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+                img{
+                    filter: v.$filter-base-white;
+                }
+
+                &:last-of-type {
+                    &::after {
+                        content: "";
+                        width: 1px;
+                        height: 40px;
+                        display: block;
+                        background-color: v.$base-white;
+                        position: absolute;
+                        right: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+
+                }
+
+            }
+
+            a {
+                padding: 4px;
+                font-size: 12px;
+                justify-content: center;
+                align-items: center;
+                gap: 8px;
+                color: v.$base-white;
+
+
+                @include v.tab {
+                    padding: 12px 8px;
+                    font-size: 14px;
+                    transition: .3s all;
+
+                    &:hover {
+                        background-color: rgba(v.$link-blue, .8);
+                    }
+                }
+
+            }
+
+            img {
+                @include v.tab {
+                    width: 20px;
+                    height: 20px;
+                }
+
+                @include v.lt {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+
+        }
+
+
+    }
+}

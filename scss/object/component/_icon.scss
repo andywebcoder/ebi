@@ -1,0 +1,30 @@
+@use'../../foundation/variables' as v;
+
+.icon {
+
+    &-num {
+        font-size: 10px;
+        display: block;
+        background-color: v.$main-navy;
+        color: v.$base-white;
+        padding: 4px 6px 2px;
+        border-radius: 50%;
+        position: absolute;
+        right: -12px;
+        top: -7px;
+
+    }
+
+    &-fav {
+        width: 24px;
+        height: 24px;
+        filter: v.$filter-accent-pink;
+
+    }
+
+    &-history {        
+            width: 24px;
+            height: 24px;
+    }
+}
+

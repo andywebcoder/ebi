@@ -1,0 +1,36 @@
+@use'../../foundation/variables' as v;
+
+
+.pagination{
+margin: 24px auto;
+ul{
+    gap: 4px;
+    justify-content: center;
+    span,a{
+        background-color: v.$border-right;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        font-weight: 500;
+        color: v.$text-dark;
+        width: 40px;
+        height: 48px;
+        transition: all .3s;
+        img{
+            filter: v.$filter-main-navy;
+        }
+        &:hover{
+            background-color: v.$main-navy;
+            color: v.$base-white;
+            img{
+                filter: v.$filter-base-white;
+            }
+        }
+        
+    }
+    span{
+        background-color: v.$main-navy;
+        color: v.$base-white;
+    }
+}
+}

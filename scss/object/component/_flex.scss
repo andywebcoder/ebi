@@ -1,0 +1,21 @@
+@use'../../foundation/variables' as v;
+
+.flex {
+    display: flex;
+    align-items: center;
+
+    &-row {
+        flex-direction: row;
+    }
+
+    &-column {
+        flex-direction: column;
+    }
+
+    &-container{
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+}

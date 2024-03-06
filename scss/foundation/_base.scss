@@ -1,0 +1,63 @@
+@use'variables' as v;
+
+html {
+
+    scroll-behavior: smooth;
+}
+
+/*ベースとしてフォントはMontserratを読み込ませる*/
+body {
+    font-family: v.$gothic;
+    color: v.$text-normal;
+}
+
+
+
+// コンテナ幅は両サイドに16pxの余白がついて、max1080pxまででストップします。
+.container-fv {
+    width: min(calc(100% - 32px), 1280px);
+    margin: 0 auto;
+}
+.container-collabo {
+    width: min(calc(100% - 32px), 1350px);
+    margin: 0 auto;
+}
+
+
+// スマホ時は全幅でタブレットから両サイドに16pxの余白、max1080pxまででストップします。
+.container-tab {
+    @include v.tab {
+        width: min(calc(100% - 32px), 1080px);
+        margin: 0 auto;
+    }
+}
+
+/*デフォルトのテキストリンクカラーを指定する*/
+a {
+    text-decoration: none;
+    color: v.$link-blue;
+
+}
+
+address {
+    font-style: normal;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: v.$text-dark;
+}
+
+@include v.tab {
+    a[href^="tel:"] {
+        pointer-events: none;
+    }
+}

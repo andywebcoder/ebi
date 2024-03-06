@@ -1,0 +1,28 @@
+@use "../../foundation/variables" as v;
+
+// 共通
+.display{
+    &-pc_only {
+        display: none !important;
+    
+        @include v.lt {
+            display: block !important;
+        }
+    }
+    &-tab_only {
+    
+        @include v.lt {
+            display: none;
+        }
+    }
+
+    &-sp_only {
+    
+        @include v.tab {
+            display: none;
+        }
+    }
+
+}
+
+

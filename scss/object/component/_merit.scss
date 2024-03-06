@@ -1,0 +1,108 @@
+@use'../../foundation/variables' as v;
+$text-blue: #0080bc;
+
+.merit {
+    h2 {
+        font-size: 24px;
+        text-align: center;
+        margin-bottom: 32px;
+
+        @include v.lt {
+            font-size: 28px;
+            margin-bottom: 48px;
+        }
+    }
+
+    &-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 20px 16px;
+
+        @include v.tab {
+            max-width: 600px;
+            margin: auto;
+            gap: 20px;
+        }
+
+        @include v.lt {
+            max-width: none;
+            gap: 12px;
+            justify-content: space-between;
+        }
+
+        li {
+            width: calc(100% / 2 - (16px /2));
+
+            @include v.tab {
+                width: calc(100% / 2 - (20px /2));
+            }
+
+            @include v.lt {
+                width: 23%;
+            }
+
+            &:first-child,
+            &:nth-child(2) {
+                img {
+                    width: 50%;
+                }
+            }
+
+            &:nth-child(3),
+            &:last-child {
+                img {
+                    width: 40%;
+                }
+            }
+        }
+
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 120px;
+            height: 120px;
+            background-color: #74b7d8;
+            border-radius: 50%;
+            margin: auto;
+
+            @include v.lt {
+                width: 150px;
+                height: 150px;
+            }
+        }
+
+        img {
+            width: 50%;
+        }
+
+        h3 {
+            font-size: 14px;
+            text-align: center;
+            margin: 20px 0;
+            color: $text-blue;
+
+            @include v.tab {
+                font-size: 18px;
+            }
+
+            @include v.lt {
+                font-size: 20px;
+            }
+        }
+
+        p {
+            font-size: 12px;
+
+            @include v.tab {
+                font-size: 14px;
+            }
+
+            @include v.lt {
+                font-size: 16px;
+            }
+        }
+
+    }
+}

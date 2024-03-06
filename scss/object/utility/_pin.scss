@@ -1,0 +1,56 @@
+@use "../../foundation/variables" as v;
+
+
+.pin {
+    position: absolute;
+    display: inline-block;
+    z-index: 1;
+    cursor: pointer;
+    // ピンの位置を仮調整
+    top: 180px;
+    left: 180px;
+
+    @include v.tab {
+        // ピンの位置を仮調整
+        top: 280px;
+        left: 280px;
+    }
+
+    &:after {
+        content: "";
+        display: block;
+        width: 34px;
+        height: 48px;
+    }
+
+    &-ur {
+       
+        &::after {
+            background: url("/assets/img/map/ur.svg") no-repeat center/100%;
+        }
+    }
+
+    &-jkk {
+        &::after {
+            background: url("/assets/img/map/jkk.svg") no-repeat center/100%;
+        }
+    }
+
+    &-minkan {
+        &::after {
+            background: url("/assets/img/map/minkan.svg") no-repeat center/100%;
+        }
+    }
+
+    &-yokohama {
+        &::after {
+            background: url("/assets/img/map/yokohama.svg") no-repeat center/100%;
+        }
+    }
+
+    &-other {
+        &::after {
+            background: url("/assets/img/map/other.svg") no-repeat center/100%;
+        }
+    }
+}

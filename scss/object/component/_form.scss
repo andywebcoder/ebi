@@ -1,0 +1,256 @@
+@use "../../foundation/variables" as v;
+
+.form {
+
+    &-title {
+        text-align: center;
+        font-size: 16px;
+        margin-bottom: 20px;
+
+        @include v.lt {
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+
+        @include v.pc {
+            font-size: 20px;
+            margin-bottom: 48px;
+        }
+    }
+
+    &-item {
+        margin-bottom: 20px;
+        padding: 16px;
+        background-color: v.$bg-gray;
+        border-radius: 6px;
+
+        @include v.lt {
+            margin-bottom: 24px;
+            padding: 20px 24px;
+            border-radius: 8px;
+        }
+
+        @include v.pc {
+            padding: 24px 32px;
+        }
+
+        &_name {
+            display: block;
+            font-size: 16px;
+            font-weight: 600;
+            color: v.$text-dark;
+            margin-bottom: 4px;
+
+            @include v.lt {
+                margin-bottom: 8px;
+            }
+        }
+    }
+
+    small {
+        display: block;
+        color: v.$text-normal;
+        font-size: 13px;
+    }
+
+    &-small {
+        &_margin {
+            margin-top: 8px;
+        }
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    &-tag {
+        font-size: 12px;
+        font-weight: 600;
+        color: v.$base-white;
+        background-color: v.$accent-pink;
+        margin-right: 4px;
+        padding: 1px 8px;
+        border-radius: 12px;
+    }
+
+    &-radio {
+        &_item {
+            margin-bottom: 4px;
+        }
+
+        .input-text {
+            margin-top: 4px;
+        }
+    }
+
+    &-tool {
+        margin-top: 8px;
+
+        &_text {
+            font-weight: 600;
+            margin: 12px 0;
+
+            @include v.lt {
+                font-size: 16px !important;
+            }
+        }
+
+        &_list {
+            font-size: 0;
+        }
+
+        &_item {
+            display: inline-block;
+            width: 120px;
+            height: 40px;
+            font-size: 14px;
+            line-height: 40px;
+            text-align: center;
+            border: 1px solid v.$border-dark;
+            background-color: v.$base-white;
+            margin: 0 8px 8px 0;
+
+            @include v.tab {
+                margin: 0 12px 12px 0;
+            }
+        }
+
+        &_link {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            color: v.$text-normal;
+            text-decoration: none;
+
+            @include v.tab {
+                margin-bottom: 12px;
+            }
+
+            &:hover {
+                color: v.$text-dark;
+                border: 1px solid v.$text-right;
+            }
+        }
+    }
+
+    &-checkbox {
+        &_list {
+            font-size: 14px;
+
+            @include v.tab {
+                display: flex;
+            }
+
+            li {
+                margin-bottom: 4px;
+
+                @include v.tab {
+                    margin-right: 12px;
+                }
+
+                @include v.lt {
+                    margin-right: 16px;
+                    margin-bottom: 0;
+                }
+            }
+
+            input {
+                top: 2px;
+            }
+        }
+    }
+
+    &-desired {
+        &_list {
+            display: flex;
+            flex-wrap: wrap;
+            font-size: 14px;
+
+            li {
+                margin-bottom: 8px;
+
+                @include v.lt {
+                    margin-bottom: 16px;
+                }
+            }
+
+            li:nth-child(odd) {
+                width: 40%;
+                max-width: 110px;
+                color: v.$text-dark;
+
+                @include v.tab {
+                    width: auto;
+                }
+            }
+
+            li:nth-child(even) {
+                width: 60%;
+
+                @include v.tab {
+                    width: auto;
+                }
+            }
+
+            li:nth-child(2) {
+                @include v.tab {
+                    margin-right: 8px;
+                }
+            }
+
+            .input-select {
+                width: 100px;
+            }
+
+            .input-select_wrap::after {
+                top: 6px;
+            }
+
+            &--first {
+                padding-top: 8px;
+            }
+        }
+    }
+
+
+    &-privacy {
+        &_area {
+            height: 240px;
+            padding: 16px 16px 0;
+            border: 1px solid v.$text-right;
+            overflow: hidden scroll;
+            margin: 0 0 20px;
+            background-color: v.$base-white;
+            @include v.scrollbar;
+
+            @include v.tab {
+                margin: 32px 0;
+            }
+
+            @include v.lt {
+                margin: 40px 0;
+                height: 480px;
+            }
+
+            @include v.pc {
+                padding: 40px 40px 0;
+            }
+
+            &::after {
+                content: '';
+                display: block;
+                height: 1rem;
+            }
+        }
+
+    }
+
+    &-text {
+        font-size: 14px;
+    }
+
+    &-error {
+        color: v.$text-price;
+        font-size: 14px;
+    }
+}
