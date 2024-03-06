@@ -1,6 +1,5 @@
 @use "../../foundation/variables" as v;
 
-
 .top-fv{
     text-align: center;
     background-color: #FAD6DA;
@@ -109,6 +108,7 @@
     color: v.$text-pink;
     // font-family: ;
     font-weight: medium;
+    font-size: 21px;
     letter-spacing: 0.18em;
     line-height: 1.95;
     margin-bottom: 50px;
