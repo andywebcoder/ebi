@@ -4,6 +4,21 @@
     background-color: v.$bg-dblue;
     margin-top: -100px;
     padding: 80px 0 90px 0;
+    // position: relative;
+    // &:after{
+    //     position: absolute;
+    //     content: "";
+    //     background-image: url(/assets/img/top/footer_back.png);
+    //     top: 0;
+    // }
+    position: relative;
+}
+.footer-back{
+    position: absolute;
+    bottom: 0;
+}
+.footer-container{
+    position: relative;
 }
 .footer-logo{
     width: 293px;
@@ -15,4 +30,10 @@
     display: block;
     width: 227px;
     margin: 0 auto;
+}
+.footer-img_btm{
+    width: 235px;
+    position: absolute;
+    top: -150px;
+    left: 10%;
 }
