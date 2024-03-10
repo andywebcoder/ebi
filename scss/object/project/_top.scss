@@ -51,17 +51,30 @@
 }
 .top-fv_circle--left{
     position: absolute;
-    width: 111px;
-    top: 150px;
-    left: 335px;
-    transform: rotate(180deg);
+    width: 50px;
+    top: 60px;
+    // left: 335px;
+    transform: translateX(-280%) rotate(180deg);
+    @include v.tab{
+        width: 111px;
+        top: 150px;
+        // left: 335px;
+        transform: translateX(-280%) rotate(180deg);
+    }
+
 }
 .top-fv_circle--right{
     position: absolute;
-    width: 111px;
-    top: 450px;
-    right: 395px;
-    transform: rotate(0deg);
+    width: 50px;
+    top: 200px;
+    // right: 395px;
+    transform: translateX(120%) rotate(0deg);
+    @include v.tab{
+        width: 111px;
+        top: 450px;
+        // right: 395px;
+        transform: translateX(120%) rotate(0deg);
+    }
 }
 .top-fv_title{
     font-family: v.$TsukuGoPro;
@@ -165,13 +178,8 @@
 .top-sp_flex{
     align-items: flex-start;
 }
-.top-logo_sp{
-    display: block;
-    width: 140px;
-
-    @include v.lt{
-        display: none;
-    }
+.top-sp_scroll{
+    position: relative;
 }
 .top-scroll{
     padding-top: 10px;
@@ -179,6 +187,17 @@
     width: 67px;
     margin: 0 auto;
     @include v.tab{
+        display: none;
+    }
+}
+.top-logo_sp{
+    display: block;
+    width: 140px;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @include v.lt{
         display: none;
     }
 }
@@ -208,7 +227,7 @@
 
 .top-collabo{
     background-color: v.$bg-cream;
-    padding: 20px 0;
+    padding: 20px 0 60px 0;
     position: relative;
     @include v.tab{
         padding: 70px 0;
@@ -361,6 +380,7 @@
 .top-collabo_manga2{
     position: relative;
     // width: 330px;
+    z-index: 2;
 }
 .top-collabo1_left{
     position: absolute;
@@ -372,6 +392,17 @@
         width: 170px;
         left: -100px;
         bottom: 15%;
+    }
+}
+.top-collabo1_sp{
+    width: 116px;
+    position: absolute;
+    bottom: -75px;
+    left: -30px;
+    z-index: -1;
+
+    @include v.tab{
+        display: none;
     }
 }
 .top-collabo1_text{
@@ -475,18 +506,28 @@
 
 
 .top-content{
-    padding-bottom: 95px;
+    padding-bottom: 70px;
     background-color: v.$bg-pink;
-    @include v.tab{
+    @include v.lt{
         padding-bottom: 0;
     }
 }
 .top-content_container{
+    margin-top: 80px;
     position: relative;
+}
+.content-sp_img{
+    width: 122px;
+    position: absolute;
+    top: -150px;
+    right: 0;
+    @include v.tab{
+        display: none;
+    }
 }
 .content-left_img1{
     display: none;
-    @include v.tab{
+    @include v.lt{
         display: block;
         width: 315px;
         position: absolute;
@@ -504,10 +545,13 @@
 }
 .top-content_flex{
     padding-bottom: 25px;
+    justify-content: center;
     @include v.tab{
-        gap: 150px;
+        gap: 15%;
         padding-bottom: 75px;
-        align-items: flex-start;
+    }
+    @include v.lt{
+        justify-content: flex-start;
     }
 
 
@@ -516,7 +560,11 @@
     }
 }
 .top-content_flexEnd{
-    justify-content: flex-end;
+    justify-content: center;
+    @include v.lt{
+        justify-content: flex-end;
+    }
+
 }
 
 .top-content_item{
@@ -524,7 +572,7 @@
     background-color: v.$bg-white;
     border-radius: 25px;
     position: relative;
-    @include v.tab{
+    @include v.lt{
         border-radius: 50px;
     }
 }
@@ -580,7 +628,7 @@
     left: 35px;
 
     @include v.tab{
-        width: 258px;
+        width: 35%;
         bottom: 50px;
         left: 90px;
     }
@@ -634,17 +682,17 @@
 }
 .top-content_item--gear{
     display: none;
-    @include v.tab{
+    @include v.lt{
         display: block;
-        width: 235px;
+        width: 22%;
     }
 
 }
 .top-content_item--deco{
     display: none;
-    @include v.tab{
+    @include v.lt{
         display: block;
-        width: 235px;
+        width: 22%;
         position: relative;
         z-index: 2;
     }
@@ -660,9 +708,9 @@
     padding: 30px 0;
     gap: 25px;
     justify-content: center;
-    @include v.tab{
+    @include v.lt{
         padding: 47px 0;
-        gap: 45px;
+        gap: 4%;
     }
 
 }
@@ -702,7 +750,7 @@
     margin: 0 auto;
     text-align: center;
     padding: 15px 0;
-    @include v.tab{
+    @include v.lt{
         padding: 30px 0;
     }
 }
