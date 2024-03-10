@@ -197,7 +197,7 @@
     top: 0;
     left: 0;
 
-    @include v.lt{
+    @include v.tab{
         display: none;
     }
 }
@@ -570,7 +570,7 @@
 .top-content_item{
     width: 700px;
     background-color: v.$bg-white;
-    border-radius: 25px;
+    border-radius: 40px;
     position: relative;
     @include v.lt{
         border-radius: 50px;
