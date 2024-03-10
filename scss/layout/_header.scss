@@ -106,6 +106,7 @@ body.is-open {
 // }
 
 .header-hamburger{
+    margin-right: 70px;
     display: block;
     background-color: transparent;
     transition: all .3s ease-in-out;
@@ -132,12 +133,14 @@ body.is-open {
 
     &:before {
         top: 45px;
+        right: 60px;
         background-color: v.$text-pink;
         transform: rotate(-45deg);
     }
 
     &:after {
         top: 45px;
+        right: 60px;
         background-color: v.$text-pink;
         transform: rotate(45deg);
     }
@@ -151,7 +154,7 @@ body.is-open {
     opacity: 1;
     visibility: visible;
     background-color: v.$bg-cream;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
@@ -167,8 +170,13 @@ body.is-open {
     align-items: center;
 }
 .header-nav_flex{
-    justify-content: center;
-    gap: 70px;
+    
+    @include v.tab{
+        flex-direction: row;
+        justify-content: center;
+        gap: 70px;
+    }
+
 }
 .header-nav_logo{
     width: 345px;
