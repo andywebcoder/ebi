@@ -1,101 +1,236 @@
 @use'../foundation/variables' as v;
 @use "sass:color";
 
-header {
-    background-color: v.$base-white;
-    border-bottom: 1px solid v.$border-right;
+body.is-open {
+    height: 100vh;
+    overflow-y: hidden;
 }
 
-
-.header {
-
-    &-logo{
-        width: 135px;
+.header-logo{
+    display: none;
+    @include v.tab{
+        display: block;
+        width: 288px;
+        position: fixed;
+        z-index: 980;
+        // left: 75px;
+        top: 65px;
     }
-    &-nav {
-        display: none;
+}
 
-        @include v.tab {
-            display: block;
-            background-color: v.$main-navy;
-        }
+// &-nav {
+//     display: none;
+// 
+//     @include v.tab {
+//         display: block;
+//         background-color: v.$main-navy;
+//     }
+// 
+//     &_list {
+//         justify-content: space-between;
+//         align-items: center;
+// 
+//         li {
+// 
+//             flex: 1;
+//             position: relative;
+// 
+//             &::before {
+//                 content: "";
+//                 width: 1px;
+//                 height: 40px;
+//                 display: block;
+//                 background-color: v.$base-white;
+//                 position: absolute;
+//                 left: 0;
+//                 top: 50%;
+//                 transform: translateY(-50%);
+//             }
+//             img{
+//                 filter: v.$filter-base-white;
+//             }
+// 
+//             &:last-of-type {
+//                 &::after {
+//                     content: "";
+//                     width: 1px;
+//                     height: 40px;
+//                     display: block;
+//                     background-color: v.$base-white;
+//                     position: absolute;
+//                     right: 0;
+//                     top: 50%;
+//                     transform: translateY(-50%);
+//                 }
+// 
+//             }
+// 
+//         }
+// 
+//         a {
+//             padding: 4px;
+//             font-size: 12px;
+//             justify-content: center;
+//             align-items: center;
+//             gap: 8px;
+//             color: v.$base-white;
+// 
+// 
+//             @include v.tab {
+//                 padding: 12px 8px;
+//                 font-size: 14px;
+//                 transition: .3s all;
+// 
+//                 &:hover {
+//                     background-color: rgba(v.$link-blue, .8);
+//                 }
+//             }
+// 
+//         }
+// 
+//         img {
+//             @include v.tab {
+//                 width: 20px;
+//                 height: 20px;
+//             }
+// 
+//             @include v.lt {
+//                 width: 24px;
+//                 height: 24px;
+//             }
+//         }
+// 
+//     }
+// 
+// 
+// }
 
-        &_list {
-            justify-content: space-between;
-            align-items: center;
+.header-hamburger{
+    display: block;
+    background-color: transparent;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+    margin-left: auto;
+    position: relative;
+}
+.header-hamburger_line.active{
+    position: absolute;
+    width: 52px;
+    height: 3px;
+    transition: inherit;
 
-            li {
-
-                flex: 1;
-                position: relative;
-
-                &::before {
-                    content: "";
-                    width: 1px;
-                    height: 40px;
-                    display: block;
-                    background-color: v.$base-white;
-                    position: absolute;
-                    left: 0;
-                    top: 50%;
-                    transform: translateY(-50%);
-                }
-                img{
-                    filter: v.$filter-base-white;
-                }
-
-                &:last-of-type {
-                    &::after {
-                        content: "";
-                        width: 1px;
-                        height: 40px;
-                        display: block;
-                        background-color: v.$base-white;
-                        position: absolute;
-                        right: 0;
-                        top: 50%;
-                        transform: translateY(-50%);
-                    }
-
-                }
-
-            }
-
-            a {
-                padding: 4px;
-                font-size: 12px;
-                justify-content: center;
-                align-items: center;
-                gap: 8px;
-                color: v.$base-white;
-
-
-                @include v.tab {
-                    padding: 12px 8px;
-                    font-size: 14px;
-                    transition: .3s all;
-
-                    &:hover {
-                        background-color: rgba(v.$link-blue, .8);
-                    }
-                }
-
-            }
-
-            img {
-                @include v.tab {
-                    width: 20px;
-                    height: 20px;
-                }
-
-                @include v.lt {
-                    width: 24px;
-                    height: 24px;
-                }
-            }
-
-        }
-
-
+    &:before,
+    &:after {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        content: "";
+        background-color: inherit;
+        transition: inherit;
     }
+
+    &:before {
+        top: 45px;
+        background-color: v.$text-pink;
+        transform: rotate(-45deg);
+    }
+
+    &:after {
+        top: 45px;
+        background-color: v.$text-pink;
+        transform: rotate(45deg);
+    }
+}
+.header-nav{
+    display: none;
+    transition: opacity .5s, visibility .5s;
+    visibility: hidden;
+}
+.header-nav.active{
+    opacity: 1;
+    visibility: visible;
+    background-color: v.$bg-cream;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    display: block;
+    z-index: 980;
+}
+.header-nav_lists{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header-nav_flex{
+    justify-content: center;
+    gap: 70px;
+}
+.header-nav_logo{
+    width: 345px;
+}
+.header-nav_list{
+    li{
+        padding-bottom: 45px;
+
+        &:nth-child(2),
+        &:nth-child(3){
+            padding-bottom: 30px;
+        }
+        &:nth-child(4){
+            padding-bottom: 50px;
+        }
+        &:nth-child(5){
+            padding-bottom: 17px;
+        }
+        &:last-of-type{
+            padding-bottom: 0;
+        }
+    }
+}
+.header-nav_link{
+    gap: 12px;
+}
+.header_nav_top{
+    width: 131px;
+}
+.header_nav_135{
+    width: 202px;
+}
+.header_nav_icon{
+    width: 56px;
+}
+.header-nav_text{
+    font-family: v.$kinto_sans;
+    font-weight: 700;
+    font-size: 26px;
+    letter-spacing: 0.14em;
+    line-height: calc(26.74px/18.88px);
+}
+.header-nav_online{
+    font-family: v.$kinto_sans;
+    font-weight: 700;
+    font-size: 26px;
+    letter-spacing: 0.05em;
+    line-height: calc(26.74px/18.88px);
+}
+.header-nav_insta{
+    font-family: v.$kinto_sans;
+    font-weight: 700;
+    font-size: 26px;
+    letter-spacing: 0.08em;
+    line-height: calc(26.74px/18.88px);
+}
+.header-nav_text--pink{
+    color: v.$text-pink;
+}
+.header-nav_text--blue{
+    color: v.$bg-dblue;
+}
+.header-nav_text--gray{
+    color: v.$text-gray;
 }

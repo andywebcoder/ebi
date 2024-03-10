@@ -21,7 +21,76 @@
 
 <body>
     <!-- partisal/header.htmlの読み込み -->
-    <div id="js-header"></div>
+    <!-- <div id="js-header"></div> -->
+
+    <header class="header">
+        <div class="container-fv">
+            <img src="/assets/img/common/logo.png" alt="" class="header-logo">
+        </div>
+        <div class="header-nav js-nav">
+            <div class="container-fv">
+
+                <button type="button" class="header-hamburger js_header_hamburger" aria-expanded="false" aria-label="メニューボタン">
+                    <span class="header-hamburger_line"></span>
+                </button>
+                <div class="header-nav_lists">
+                    <div class="flex header-nav_flex">
+                        <a href="">
+                            <img src="/assets/img/common/header_nav_logo.png" alt="" class="header-nav_logo">
+                        </a>
+                        <ul class="header-nav_list">
+                            <li>
+                                <a class="header-nav_link" href="">
+                                    <img src="/assets/img/common/header_nav_top.png" alt="" class="header_nav_top">
+                                </a>
+                            </li>
+                            <li>
+                                <a class="header-nav_link" href="">
+                                    <img src="/assets/img/common/header_nav_135.png" alt="" class="header_nav_135">
+                                </a>
+                            </li>
+                            <li>
+                                <a class="flex header-nav_link" href="">
+                                    <img src="/assets/img/common/header_nav_manga1.png" alt="" class="header_nav_icon">
+                                    <p class="header-nav_text header-nav_text--pink">
+                                        人気漫画家が〈ゆかり〉の<br>
+                                        魅力を漫画で描く！
+                                    </p>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="flex header-nav_link" href="">
+                                    <img src="/assets/img/common/header_nav_manga2.png" alt="" class="header_nav_icon">
+                                    <p class="header-nav_text header-nav_text--blue">
+                                        〈ゆかり〉と私<br>
+                                        おもいで募集キャンペーン
+                                    </p>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="flex header-nav_link" href="">
+                                    <img src="/assets/img/common/header_nav_online.png" alt="" class="header_nav_icon">
+                                    <p class="header-nav_online header-nav_text--gray">
+                                        ONLINE STORE
+                                    </p>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="flex header-nav_link" href="">
+                                    <img src="/assets/img/common/header_nav_insta.png" alt="" class="header_nav_icon">
+                                    <p class="header-nav_insta header-nav_text--gray">
+                                        instagram
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </header>
+
     <main>
 
         <section class="top-fv">
@@ -30,13 +99,29 @@
                     <img src="/assets/img/top/fv_circle.png" alt="" class="top-fv_circle--img">
                 </div>
                 <img src="/assets/img/top/fv_135.png" alt="" class="top-fv_135">
-                <!-- <img src="/assets/img/top/shrimp.png" alt="" class="top-fv_circle--left">
-                <img src="/assets/img/top/shrimp.png" alt="" class="top-fv_circle--right"> -->
+                <!-- <img src="/assets/img/top/shrimp.png" alt="" class="top-fv_circle--left ebi-circle_img ebi-img">
+                <img src="/assets/img/top/shrimp.png" alt="" class="top-fv_circle--right ebi-circle_img ebi-img"> -->
                 <img src="/assets/img/top/gear.png" alt="" class="top-fv_leftImg">
                 <img src="/assets/img/top/heart.png" alt="" class="top-fv_rightImg">
                 <h2 class="top-fv_title">
-                    つづく海老せん、<br>
-                    すすむ海老せん。
+                    <span class="top-fv_title--span1">
+                        <p>つ</p>
+                        <p>づ</p>
+                        <p>く</p>
+                        <p>海</p>
+                        <p>老</p>
+                        <p>せ</p>
+                        <p>ん、</p>
+                    </span>
+                    <span class="top-fv_title--span2">
+                        <p>す</p>
+                        <p>す</p>
+                        <p>む</p>
+                        <p>海</p>
+                        <p>老</p>
+                        <p>せ</p>
+                        <p>ん。</p>
+                    </span>
                 </h2>                
                 <p class="top-fv_text">
                     坂角総本舖は創業135周年を迎えました。<br>
@@ -44,6 +129,10 @@
                     本物のおいしさとともに、あたらしい<br>
                     楽しさと豊かさをお届けしていきます。
                 </p>
+                <!-- <div class="flex top-sp_flex"> -->
+                    <img src="/assets/img/common/logo.png" alt="" class="top-logo_sp">
+                    <img src="/assets/img/top/scroll.png" alt="" class="top-scroll">
+                <!-- </div> -->
             </div>
         </section>
 
@@ -67,7 +156,11 @@
                     <img src="/assets/img/top/manga4.png" alt="" class="top-collabo_img4">
                     <img src="/assets/img/top/manga5.png" alt="" class="top-collabo_img5">
                 </div>
-                <div class="flex top-collabo_flex">
+                <div class="top-collabo_spimg">
+                    <img src="/assets/img/top/content_left1.png" alt="">
+                </div>
+
+                <div class="flex flex-column top-collabo_flex">
                     <div class="top-collabo_manga1">
                         <img src="/assets/img/top/collabo1.png" alt="" class="top-collabo_img">
                         <img src="/assets/img/top/collabo1_left.png" alt="" class="top-collabo1_left">
@@ -162,7 +255,20 @@
 
     </main>
     <!-- partisal/footer.htmlの読み込み -->
-    <div id="js-footer"></div>
+    <!-- <div id="js-footer"></div> -->
+    <footer class="footer">
+        <img src="/assets/img/common/footer_back.png" alt="" class="footer-back">
+        <div class="container-fv footer-container">
+            <img src="/assets/img/top/footer_img_btm.png" alt="" class="footer-img_btm">
+            <img src="/assets/img/top/shrimp.png" alt="" class="footer-ebi_img ebi-img scroll-anim scrollRotate">
+            <div class="footer-img">
+                <img src="/assets/img/common/footer_logo.png" alt="" class="footer-logo">
+                <img src="/assets/img/common/onlinestore.png" alt="" class="footer-online">
+            </div>        
+        </div>
+    
+    </footer>
+
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="/assets/js/site.js"></script>
 </body>

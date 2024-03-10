@@ -2,16 +2,23 @@
 
 .footer {
     background-color: v.$bg-dblue;
-    margin-top: -100px;
-    padding: 80px 0 90px 0;
-    // position: relative;
+    margin-top: 0px;
+    padding: 25px 0 30px 0;
+    position: relative;
+
+    @include v.tab{
+        background-color: v.$bg-dblue;
+        margin-top: -100px;
+        padding: 115px 0 90px 0;
+    }
     // &:after{
     //     position: absolute;
     //     content: "";
-    //     background-image: url(/assets/img/top/footer_back.png);
-    //     top: 0;
+    //     background-image: url(/assets/img/common/footer_back.png);
+    //     z-index: 2;
+    //     bottom: 0;
+    //     left: 0;
     // }
-    position: relative;
 }
 .footer-back{
     position: absolute;
@@ -21,19 +28,55 @@
     position: relative;
 }
 .footer-logo{
-    width: 293px;
+    width: 131px;
     display: block;
     margin: 0 auto;
-    padding-bottom: 25px;
+    padding-bottom: 10px;
+    @include v.tab{
+        width: 293px;
+        padding-bottom: 25px;
+    }
 }
 .footer-online{
     display: block;
-    width: 227px;
+    width: 102px;
     margin: 0 auto;
+    @include v.tab{
+        display: block;
+        width: 227px;        
+    }
 }
 .footer-img_btm{
-    width: 235px;
+    width: 92px;
+    top: -50px;
     position: absolute;
-    top: -150px;
-    left: 10%;
+    @include v.tab{
+        width: 235px;
+        top: -150px;
+        left: 10%;
+    }
+}
+.footer-ebi_img{
+    width: 59px;
+    position: absolute;
+    top: -30px;
+    left: 5%;
+    @include v.tab{
+        width: 111px;
+        top: -150px;
+        left: 10%;
+    }
+}
+
+.scroll-anim.ready {
+    transition: all 4s ease-in;
+}
+.scroll-anim.ready.active {
+    opacity: 1;
+}
+.scrollRotate.ready {
+    transform: rotate(0deg);
+}
+.scrollRotate.ready.active {
+    transform: rotate(360deg);
 }

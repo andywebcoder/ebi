@@ -3,26 +3,51 @@
 .top-fv{
     text-align: center;
     background-color: #FAD6DA;
-    padding: 70px 0 247px 0;
+    padding: 30px 0 130px 0;
+    @include v.tab{
+        padding: 70px 0 247px 0;
+    }
 }
 .top-fv_container{
     position: relative;
 }
 .top-fv_circle{
     position: relative;
-    max-width: 683px;
     margin: 0 auto;
-    margin-bottom: 55px;
-}
-.top-fv_circle--img{
+    width: 307px;
+
+    @include v.tab{
+        width: 683px;
+        margin-bottom: 55px;
     
+    }
+}
+.top-fv_circle--img,
+.ebi-img{
+    animation: rotation 4s linear;
+}
+.ebi-circle_img{
+    animation-delay: 4s;    
+}
+@keyframes rotation {
+    0% {
+    transform: rotate(0deg);
+    }
+    100% {
+    transform: rotate(360deg);
+    }
 }
 .top-fv_135{
-    width: 352px;
     position: absolute;
-    top: 30%;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 158px;
+
+    @include v.tab{
+        top: 30%;
+        width: 352px;
+    }
 }
 .top-fv_circle--left{
     position: absolute;
@@ -41,57 +66,169 @@
 .top-fv_title{
     font-family: v.$TsukuGoPro;
     font-weight: bold;
-    font-size: 73px;
+    font-size: 40px;
     letter-spacing: 0.56em;
     padding-left: 0.56em;
-    // text-indent: 0.56em;
-    line-height: calc(99.78px/68.95px);
+    line-height: calc(48.1px/40px);
     color: v.$text-red;
     margin-bottom: 55px;
-    font-feature-settings: "palt";
+    overflow: hidden;
+
+    @include v.tab{
+        font-size: 73px;
+        letter-spacing: 0.56em;
+        padding-left: 0.56em;
+        line-height: calc(99.78px/68.95px);
+        margin-bottom: 55px;
+    }
 
     span{
-        letter-spacing: 0;
+        display: flex;
+        justify-content: center;
+    }
+    p{
+        opacity: 0;
+        animation: textanimation 1s forwards;
+    }
+}
+.top-fv_title--span1 p:nth-child(1) {
+    animation-delay: 0.2s
+}
+.top-fv_title--span1 p:nth-child(2) {
+    animation-delay: 0.4s
+}
+.top-fv_title--span1 p:nth-child(3) {
+    animation-delay: 0.6s
+}
+.top-fv_title--span1 p:nth-child(4) {
+    animation-delay: 0.8s
+}
+.top-fv_title--span1 p:nth-child(5) {
+    animation-delay: 1.0s
+}
+.top-fv_title--span1 p:nth-child(6) {
+    animation-delay: 1.2s
+}
+.top-fv_title--span1 p:nth-child(7) {
+    animation-delay: 1.4s
+}
+.top-fv_title--span2 p:nth-child(1) {
+    animation-delay: 1.6s
+}
+.top-fv_title--span2 p:nth-child(2) {
+    animation-delay: 1.8s
+}
+.top-fv_title--span2 p:nth-child(3) {
+    animation-delay: 2.0s
+}
+.top-fv_title--span2 p:nth-child(4) {
+    animation-delay: 2.2s
+}
+.top-fv_title--span2 p:nth-child(5) {
+    animation-delay: 2.4s
+}
+.top-fv_title--span2 p:nth-child(6) {
+    animation-delay: 2.6s
+}
+.top-fv_title--span2 p:nth-child(7) {
+    animation-delay: 2.8s
+}
+.top-fv_title--span2 p:nth-child(8) {
+    animation-delay: 3.0s
+}
+@keyframes textanimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
     }
 }
 .top-fv_text{
     // font-family: v.$TsukuGoPro;
     font-family: v.$kinto_sans;
     font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 0.12em;
+    line-height: calc(24.99px/15px);
+    color: v.$text-red;
+    margin-bottom: 20px;
+
+    @include v.tab{
     font-size: 24px;
     letter-spacing: 0.18em;
     line-height: calc(46.65px/24px);
-    color: v.$text-red;
+    }
+
+}
+.top-sp_flex{
+    align-items: flex-start;
+}
+.top-logo_sp{
+    display: block;
+    width: 140px;
+
+    @include v.lt{
+        display: none;
+    }
+}
+.top-scroll{
+    padding-top: 10px;
+    display: block;
+    width: 67px;
+    margin: 0 auto;
+    @include v.tab{
+        display: none;
+    }
 }
 .top-fv_leftImg{
-    width: 281px;
-    position: absolute;
-    left: 0;
-    top: 55%;
+    display: none;
+
+    @include v.lt{
+        display: block;
+        width: 281px;
+        position: absolute;
+        left: 0;
+        top: 55%;
+    }
+
 }
 .top-fv_rightImg{
-    width: 225px;
-    position: absolute;
-    right: 0;
-    top: 75%;
+    display: none;
+    @include v.lt{
+        display: block;
+        width: 225px;
+        position: absolute;
+        right: 0;
+        top: 75%;
+    }
 }
 
 
 .top-collabo{
     background-color: v.$bg-cream;
-    padding: 70px 0;
+    padding: 20px 0;
     position: relative;
+    @include v.tab{
+        padding: 70px 0;
+    }
+
 }
 .top-collabo_circle{
-    width: 388px;
-    height: 388px;
+    width: 204px;
+    height: 204px;
     border-radius: 50%;
     background-color: v.$bg-cream;
     position: absolute;
-    top: -15%;
+    top: -6%;
     left: 50%;
     transform: translateX(-50%);
-
+    @include v.tab{
+        top: -15%;
+        width: 388px;
+        height: 388px;
+    }
     P{
         position: absolute;
         top: 0;
@@ -104,59 +241,121 @@
     position: relative;
 }
 .top-collabo_title{
-    width: 570px;
-    margin-bottom: 30px;
+    width: 300px;
+    margin-bottom: 15px;
+
+    @include v.tab{
+        width: 570px;
+        margin-bottom: 30px;
+    }
+
 }
 .top-collabo_subTitle{
-    width: 600px;
+    width: 300px;
     margin: 0 auto 40px auto;
+    @include v.tab{
+        width: 600px;
+        margin: 0 auto 40px auto;
+    }
+
 }
 .top-collabo_text{
     color: v.$text-pink;
     // font-family: ;
     font-weight: 500;
-    font-size: 21px;
-    letter-spacing: 0.18em;
-    line-height: calc(37.95px/21px);
-    margin-bottom: 50px;
+    font-size: 15px;
+    letter-spacing: 0.12em;
+    line-height: calc(24.99px/15px);
+    margin-bottom: 35px;
+    @include v.tab{
+        font-size: 21px;
+        letter-spacing: 0.18em;
+        line-height: calc(37.95px/21px);
+        margin-bottom: 50px;
+    }
 
 }
 .top-collabo_img1{
     position: absolute;
-    width: 371px;
-    top: -255px;
-    left: 70px;
+    width: 168px;
+    top: -140px;
+    left: -55px;
+    @include v.tab{
+        width: 28%;
+        top: -255px;
+        left: 70px;
+    }
 }
 .top-collabo_img2{
     position: absolute;
-    width: 340px;
-    top: 120px;
-    left: 20px;
+    width: 180px;
+    bottom: -150px;
+    left: -35px;
+    @include v.tab{
+        width: 30%;
+        top: 120px;
+        left: -20pxpx;
+    }
 }
 .top-collabo_img3{
     position: absolute;
-    width: 366px;
-    top: 300px;
-    left: 0;
+    width: 193px;
+    bottom: -255px;
+    left: 20px;
+    @include v.tab{
+        width: 30%;
+        top: 345px;
+        left: -65px;
+    }
 }
 .top-collabo_img4{
     position: absolute;
-    width: 265px;
-    top: -200px;
-    right: 140px;
+    width: 129px;
+    top: -125px;
+    right: -45px;
+    transform: rotate(25deg);
+    @include v.tab{
+        transform: rotate(0);
+        width: 25%;
+        top: -250px;
+        right: 70px;
+    }
 }
 .top-collabo_img5{
     position: absolute;
-    width: 348px;
-    top: 160px;
-    right: 0;
+    width: 183px;
+    bottom: -165px;
+    right: -25px;
+    @include v.tab{
+        width: 30%;
+        top: 160px;
+        right: -70px;
+    }
+}
+.top-collabo_spimg{
+    width: 141px;
+    padding-top: 135px;
+    margin-left: auto;
+    display: block;
+    @include v.tab{
+        display: none;
+    }
 }
 .top-collabo_flex{
     gap: 48px;
-    justify-content: center;
+    
+    @include v.tab{
+        flex-direction: row;
+        gap: 48px;
+        justify-content: center;
+    }
+
 }
 .top-collabo_img{
-    width: 330px;
+    width: 280px;
+    @include v.tab{
+        width: 330px;        
+    }
 }
 .top-collabo_manga1,
 .top-collabo_manga2{
@@ -164,29 +363,44 @@
     // width: 330px;
 }
 .top-collabo1_left{
-    width: 170px;
     position: absolute;
-    left: -100px;
-    bottom: 15%;
+    width: 138px;
+    left: -60px;
+    top: 15%;
+
+    @include v.tab{
+        width: 170px;
+        left: -100px;
+        bottom: 15%;
+    }
 }
 .top-collabo1_text{
+    span{
+        display: block;
+        font-size: 22px;
+        font-weight: 500;
+        line-height: calc(37.4px/22.97px);
+        letter-spacing: 0.14em;
+        @include v.tab{
+            font-size: 27px;
+            line-height: calc(43.77px/26.88px);
+        }
+
+    }
     text-align: center;
     position: absolute;
     top: 35%;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 42px;
+    font-size: 36px;
     font-weight: 400;
     color: v.$text-white;
-    line-height: calc(50.5px/42px);
+    line-height: calc(43.15px/35.89px);
     letter-spacing: -0.03em;
     width: 100%;
-    span{
-        display: block;
-        font-size: 27px;
-        font-weight: 500;
-        line-height: calc(43.77px/26.88px);
-        letter-spacing: 0.14em;
+    @include v.tab{
+        font-size: 42px;
+        line-height: calc(50.5px/42px);
     }
 }
 
@@ -197,26 +411,43 @@
     top: 8%;
 }
 .top-collabo2_right{
-    width: 196px;
+    width: 167px;
     position: absolute;
-    right: -50px;
+    right: -40px;
     top: 30%;
+
+    @include v.tab{
+        width: 196px;
+        right: -50px;
+        top: 30%;
+    }
 }
 .top-collabo2_flame--text{
     position: absolute;
     top: 41%;
     left: 11%;
     font-family: v.$TsukuGoPro;
-    font-size: 41px;
+    font-size: 35px;
     font-weight: 700;
-    line-height: calc(40.91px/40.97px);
+    line-height: calc(37.52px/35.01px);
     letter-spacing: 0.11em;
     color: v.$text-white;
     text-align: center;
+    @include v.tab{
+        top: 41%;
+        left: 11%;
+        font-size: 41px;
+        line-height: calc(40.91px/40.97px);
+    }
     span{
-        font-size: 31px;
-        line-height: calc(43.91px/31px);
+        font-size: 26px;
+        line-height: calc(37.52px/26.49px);
         letter-spacing: 0.11em;
+        @include v.tab{
+            font-size: 31px;
+            line-height: calc(43.91px/31px);
+        }
+
     }
 }
 .top-collabo2_text{
@@ -225,34 +456,60 @@
     left: 13%;
     font-family: v.$kinto_sans;
     color: v.$text-white;
-    font-size: 42px;
+    font-size: 36px;
     font-weight: 400;
-    line-height: calc(50.5px/42px);
+    line-height: calc(43.15px/35.89px);
+    letter-spacing: 0.03em;
+
+    @include v.tab{
+        position: absolute;
+        bottom: 8%;
+        left: 13%;
+        font-family: v.$kinto_sans;
+        color: v.$text-white;
+        font-size: 42px;
+        line-height: calc(50.5px/42px);
+    }
 }
 
 
 
 .top-content{
+    padding-bottom: 95px;
     background-color: v.$bg-pink;
+    @include v.tab{
+        padding-bottom: 0;
+    }
 }
 .top-content_container{
     position: relative;
 }
 .content-left_img1{
-    width: 315px;
-    position: absolute;
-    top: -245px;
-    left: 0;
+    display: none;
+    @include v.tab{
+        display: block;
+        width: 315px;
+        position: absolute;
+        top: -245px;
+        left: 0;
+    }
 }
 .top-content_title{
-    width: 703px;
+    width: 323px;
     margin: 0 auto;
     position: relative;
+    @include v.tab{
+        width: 703px;
+    }
 }
 .top-content_flex{
-    gap: 150px;
-    padding-bottom: 75px;
-    align-items: flex-start;
+    padding-bottom: 25px;
+    @include v.tab{
+        gap: 150px;
+        padding-bottom: 75px;
+        align-items: flex-start;
+    }
+
 
     &:last-of-type{
         padding-bottom: 0;
@@ -265,124 +522,214 @@
 .top-content_item{
     width: 700px;
     background-color: v.$bg-white;
-    border-radius: 50px;
+    border-radius: 25px;
     position: relative;
+    @include v.tab{
+        border-radius: 50px;
+    }
 }
 .top-content_item--title{
     position: absolute;
-    top: -25px;
+    top: -15px;
     left: 50%;
-    transform: translateX(-50%);;
+    transform: translateX(-50%);
+    @include v.tab{
+        top: -25px;
+    }
+
 }
 .top-content_item--pakageTitle{
-    width: 267px;
+    width: 126px;
+    @include v.tab{
+        width: 267px;
+    }
+
 }
 .top-content_item--packageText{
     position: absolute;
-    top: 60px;
-    left: 65px;
+    top: 25px;
+    left: 30px;
     font-family: v.$TsukuGoPro; 
-    font-size: 25px;
-    line-height: calc(40.77px/25.67px);
+    font-size: 12px;
+    line-height: calc(19.13px/12.13px);
     letter-spacing: 0.08em;
     font-weight: 800;
     text-align: center;
     color: v.$text-gold;
+    @include v.tab{
+        top: 60px;
+        left: 65px; 
+        font-size: 25px;
+        line-height: calc(40.77px/25.67px);
+    }
     span{
         display: block;
-        font-size: 33px;
-        line-height: calc(47.85px/33.1px);
+        font-size: 15px;
+        line-height: calc(15.64px/22.61px);
         letter-spacing: 0.02em;
+        @include v.tab{
+            font-size: 33px;
+            line-height: calc(47.85px/33.1px);
+        }
     }
 }
 .top-content_item--packageSign{
-    width: 258px;
     position: absolute;
-    bottom: 50px;
-    left: 90px;
+    width: 122px;
+    bottom: 35px;
+    left: 35px;
+
+    @include v.tab{
+        width: 258px;
+        bottom: 50px;
+        left: 90px;
+    }
 }
 .top-content_item--img{
-    width: 282px;
+    width: 133px;
+    @include v.tab{
+        width: 282px;
+    }
+
 }
 .top-content_item--circleBox{
     position: absolute;
-    bottom: 35px;
-    right: 45px;
+    bottom: 20px;
+    right: 25px;
+
+    @include v.tab{
+        bottom: 35px;
+        right: 45px;
+    }
 }
 .top-content_item--circle{
-    width: 100px;
-    height: 100px;
+    width: 46px;
+    height: 46px;
     border-radius: 50%;
     background-color: #F77D79;
     position: relative;
+    @include v.tab{
+        width: 100px;
+        height: 100px;
+    }
     p{
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         font-family: v.$TsukuGoPro; 
-        font-size: 20px;
-        line-height: 1.95;
+        font-size: 10px;
+        line-height: calc(13.58/9.39);
         letter-spacing: 0.2em;
         font-weight: 800;
         color: v.$bg-white;
+        @include v.tab{
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20px;
+            line-height: calc(28.74/19.88);
+        }
     }
 }
 .top-content_item--gear{
-    width: 235px;
+    display: none;
+    @include v.tab{
+        display: block;
+        width: 235px;
+    }
+
 }
 .top-content_item--deco{
-    width: 235px;
+    display: none;
+    @include v.tab{
+        display: block;
+        width: 235px;
+        position: relative;
+        z-index: 2;
+    }
 }
 
 .top-content_item--eventTitle{
-    width: 218px;
+    width: 109px;
+    @include v.tab{
+        width: 218px;
+    }
 }
 .top-content_event{
-    padding: 47px 0;
-    gap: 45px;
+    padding: 30px 0;
+    gap: 25px;
     justify-content: center;
+    @include v.tab{
+        padding: 47px 0;
+        gap: 45px;
+    }
+
 }
 .top-content_event--box{
     text-align: center;
 }
 .top-content_event--text{
     font-family: v.$TsukuGoPro; 
-    font-size: 31px;
-    line-height: calc(44.59px/30.84px);
-    letter-spacing: 0.08em;
+    font-size: 14px;
+    line-height: calc(21.07px/14.57px);
+    letter-spacing: 0.02em;
     font-weight: 800;
     text-align: center;
     color: v.$text-gold;
     padding-bottom: 30px;
+    @include v.tab{
+        font-size: 31px;
+        line-height: calc(44.59px/30.84px);
+        letter-spacing: 0.08em;
+        padding-bottom: 30px;
+    }
 }
 .top-content_item--exentSign{
-    width: 113px;
+    width: 53px;
+    @include v.tab{
+        width: 113px;
+    }
 }
 
 .top-content_item--moreTitle{
-    width: 192px;
+    width: 98px;
+    @include v.tab{
+        width: 192px;
+    }
 }
 .top-content_more--box{
     margin: 0 auto;
-    padding: 30px 0;
+    text-align: center;
+    padding: 15px 0;
+    @include v.tab{
+        padding: 30px 0;
+    }
 }
 .top-content_more--coming{
     font-family: v.$kinto_sans;
     font-weight: 700;
-    font-size: 50px;
+    font-size: 23px;
     letter-spacing: 0.13em;
-    line-height: calc(105.96px/50.28px);
+    line-height: calc(50.07px/23.76px);
     font-style: italic;
     background: linear-gradient(90deg, #ef857a 0%, #63a2d2 50%, #dd8080 100%);
     -webkit-background-clip: text;//テキストでくり抜く
     -webkit-text-fill-color: transparent;//くり抜いた部分は背景を表示
+    @include v.tab{
+        font-size: 50px;
+        line-height: calc(105.96px/50.28px);
+    }
 }
 .top-content_more--text{
     font-family: v.$TsukuGoPro; 
-    font-size: 26px;
-    line-height: calc(44.67px/26.44px);
+    font-size: 12px;
+    line-height: calc(21.11px/12.49px);
     letter-spacing: 0.12em;
     font-weight: 800;
     color: v.$text-dpink;
+    @include v.tab{
+        font-size: 26px;
+        line-height: calc(44.67px/26.44px);
+    }
 }
