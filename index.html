@@ -4,8 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex , nofollow" />
+    
     <title></title>    
     <link rel="stylesheet" href="/assets/css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
 
     <script>
         (function(d) {
@@ -20,35 +26,32 @@
 </head>
 
 <body>
-    <!-- partisal/header.htmlの読み込み -->
-    <!-- <div id="js-header"></div> -->
-
     <header class="header">
         <div class="container-fv">
-            <img src="/assets/img/common/logo.png" alt="" class="header-logo">
+            <img src="/assets/img/common/logo.png" alt="" class="header-logo hover-cursor">
         </div>
         <div class="header-nav js-nav">
             <button type="button" class="header-hamburger js_header_hamburger" aria-expanded="false" aria-label="メニューボタン">
                 <span class="header-hamburger_line"></span>
             </button>
             <div class="header-nav_lists">
-                <div class="flex flex-column header-nav_flex">
-                    <a href="">
+                <div class="flex header-nav_flex">
+                    <a href="" class="header-nav_logoLink hover-opacity">
                         <img src="/assets/img/common/header_nav_logo.png" alt="" class="header-nav_logo">
                     </a>
                     <ul class="header-nav_list">
                         <li>
-                            <a class="header-nav_link" href="">
+                            <a href="" class="header-nav_link hover-opacity">
                                 <img src="/assets/img/common/header_nav_top.png" alt="" class="header_nav_top">
                             </a>
                         </li>
                         <li>
-                            <a class="header-nav_link" href="">
+                            <a href="" class="header-nav_link hover-opacity">
                                 <img src="/assets/img/common/header_nav_135.png" alt="" class="header_nav_135">
                             </a>
                         </li>
                         <li>
-                            <a class="flex header-nav_link" href="">
+                            <a href="" class="flex header-nav_link hover-opacity">
                                 <img src="/assets/img/common/header_nav_manga1.png" alt="" class="header_nav_icon">
                                 <p class="header-nav_text header-nav_text--pink">
                                     人気漫画家が〈ゆかり〉の<br>
@@ -57,7 +60,7 @@
                             </a>
                         </li>
                         <li>
-                            <a class="flex header-nav_link" href="">
+                            <a href="" class="flex header-nav_link hover-opacity">
                                 <img src="/assets/img/common/header_nav_manga2.png" alt="" class="header_nav_icon">
                                 <p class="header-nav_text header-nav_text--blue">
                                     〈ゆかり〉と私<br>
@@ -66,7 +69,7 @@
                             </a>
                         </li>
                         <li>
-                            <a class="flex header-nav_link" href="">
+                            <a href="" class="flex header-nav_link hover-opacity">
                                 <img src="/assets/img/common/header_nav_online.png" alt="" class="header_nav_icon">
                                 <p class="header-nav_online header-nav_text--gray">
                                     ONLINE STORE
@@ -74,7 +77,7 @@
                             </a>
                         </li>
                         <li>
-                            <a class="flex header-nav_link" href="">
+                            <a href="" class="flex header-nav_link hover-opacity">
                                 <img src="/assets/img/common/header_nav_insta.png" alt="" class="header_nav_icon">
                                 <p class="header-nav_insta header-nav_text--gray">
                                     instagram
@@ -94,10 +97,10 @@
             <div class="container-fv top-fv_container">
                 <div class="top-fv_circle">
                     <img src="/assets/img/top/fv_circle.png" alt="" class="top-fv_circle--img">
+                    <img src="/assets/img/common/shrimp.png" alt="" class="top-fv_circle--left ebi-img">
+                    <img src="/assets/img/common/shrimp.png" alt="" class="top-fv_circle--right ebi-img">
                 </div>
                 <img src="/assets/img/top/fv_135.png" alt="" class="top-fv_135">
-                <img src="/assets/img/top/shrimp.png" alt="" class="top-fv_circle--left ebi-circle_img ebi-img">
-                <img src="/assets/img/top/shrimp.png" alt="" class="top-fv_circle--right ebi-circle_img ebi-img">
                 <img src="/assets/img/top/gear.png" alt="" class="top-fv_leftImg">
                 <img src="/assets/img/top/heart.png" alt="" class="top-fv_rightImg">
                 <h2 class="top-fv_title">
@@ -136,7 +139,11 @@
         <section class="top-collabo">
             <div class="container-collabo">
                 <div class="top-collabo_circle">
-                    <img src="/assets/img/top/manga_135.png" alt="">
+                    <!-- <img src="/assets/img/top/manga_135.png" alt=""> -->
+                    <picture>
+                        <source media="(max-width: 767px)" srcset="/assets/img/top/manga_135_sp.png">
+                        <img src="/assets/img/top/manga_135.png" alt="" class="top-collabo_manga135">
+                    </picture>
                 </div>
                 <div class="top-collabo_items">
                     <img src="/assets/img/top/manga_title.png" alt="" class="top-collabo_title">
@@ -146,7 +153,7 @@
                     <p class="top-collabo_text">
                         坂角の長い歴史にあるのは様々なご縁け沢<br>
                         山のだけ沢山の食ゆるのは様るのは様かり
-                    </p>                    
+                    </p>
                     <img src="/assets/img/top/manga1.png" alt="" class="top-collabo_img1">
                     <img src="/assets/img/top/manga2.png" alt="" class="top-collabo_img2">
                     <img src="/assets/img/top/manga3.png" alt="" class="top-collabo_img3">
@@ -159,45 +166,55 @@
 
                 <div class="flex flex-column top-collabo_flex">
                     <div class="top-collabo_manga1">
+                    <a href="/" class="top-collabo_imgLink hover-opacity">
                         <img src="/assets/img/top/collabo1.png" alt="" class="top-collabo_img">
                         <img src="/assets/img/top/collabo1_left.png" alt="" class="top-collabo1_left">
                         <img src="/assets/img/top/gear.png" alt="" class="top-collabo1_sp">
+                    
                         <p class="top-collabo1_text">
                             <span>人気漫画家が</span>
                             ゆかりの魅力を<br>漫画で描く！
                         </p>
+                    </a>
+
                     </div>
                     <div class="top-collabo_manga2">
-                        <img src="/assets/img/top/collabo2.png" alt="" class="top-collabo_img">
-                        <img src="/assets/img/top/collabo2_left.png" alt="" class="top-collabo2_left">
-                        <img src="/assets/img/top/collabo2_right.png" alt="" class="top-collabo2_right">
-                        <p class="top-collabo2_flame--text">
-                            私<span>と</span><br>ゆかり
-                        </p>
-                        <p class="top-collabo2_text">
-                            おもいで募集<br>
-                            キャンペーン
-                        </p>
+                        <a href="" class="top-collabo_imgLink hover-opacity">
+                            <img src="/assets/img/top/collabo2.png" alt="" class="top-collabo_img">
+
+                            <img src="/assets/img/top/collabo2_left.png" alt="" class="top-collabo2_left">
+                            <img src="/assets/img/top/collabo2_right.png" alt="" class="top-collabo2_right">
+                            <p class="top-collabo2_flame--text">
+                                私<span>と</span><br>ゆかり
+                            </p>
+                            <p class="top-collabo2_text">
+                                おもいで募集<br>
+                                キャンペーン
+                            </p>
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
 
         <section class="top-content">
-            <img src="/assets/img/top/content_back.png" alt="">
+            <picture>
+                <source media="(max-width: 767px)" srcset="/assets/img/top/content_back_sp.png">
+                <img src="/assets/img/top/content_back.png" alt="" class="top-content_back">
+            </picture>
             <div class="container-fv top-content_container">
-                <img src="/assets/img/top/event_deco.png" alt="" class="content-sp_img">
+                <img src="/assets/img/top/event_deco_sp.png" alt="" class="content-sp_img">
                 <img src="/assets/img/top/content_left1.png" alt="" class="content-left_img1">
                 <h2 class="top-content_title">
-                    <img src="/assets/img/top/content_title.png" alt="">
-
+                    <!-- <img src="/assets/img/top/collabo_hert.png" alt="" class="top-content_heart"> -->
+                    <img src="/assets/img/top/content_title.png" alt="" class="top-content_titleImg">
                 </h2>
 
-                <div class="flex top-content_flex top-content_flexEnd">
-                    <div class="top-content_item">
+                <div class="top-content_flex top-content_flex--package">
+                    <div class="top-content_item top-content_item--package">
                         <img src="/assets/img/top/package_back.png" alt="">
                         <img src="/assets/img/top/package.png" alt="" class="top-content_item--title top-content_item--pakageTitle">
-                        <p class="top-content_item--packageText">
+                        <!-- <p class="top-content_item--packageText">
                             周年記念デザイン
                             <span>ゆかり詰め合わせ箱</span>
                         </p>
@@ -208,17 +225,16 @@
                                     BUY
                                 </p>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <img src="/assets/img/top/gear.png" alt="" class="top-content_item--gear">
                 </div>
 
-                <div class="flex top-content_flex">
-                    <img src="/assets/img/top/event_deco.png" alt="" class="top-content_item--deco">
-                    
-                    <div class="top-content_item">
+                <div class="top-content_flex top-content_flex--event">
+                    <div class="top-content_item top-content_item--event">
+                        <img src="/assets/img/top/event_back.png" alt="">
                         <img src="/assets/img/top/event.png" alt="" class="top-content_item--title top-content_item--eventTitle">
-                        <div class="flex top-content_event">
+                        <!-- <div class="flex top-content_event">
                             <div class="top-content_event--box">
                                 <p class="top-content_event--text">
                                     あの人気イベントが<br>
@@ -228,38 +244,35 @@
                                 <img src="/assets/img/top/event_sign.png" alt="" class="top-content_item--exentSign">
                             </div>
                             <img src="/assets/img/top/event_img.png" alt="" class="top-content_item--img">
-                        </div>
+                        </div> -->
                     </div>
+                    <img src="/assets/img/top/event_deco.png" alt="" class="top-content_item--deco">
                 </div>
 
-                <div class="flex top-content_flex top-content_flexEnd">
-                    <div class="top-content_item">
+                <div class="top-content_flex top-content_flex--coming">
+                    <div class="top-content_item top-content_item--coming">
                         <img src="/assets/img/top/more.png" alt="" class="top-content_item--title top-content_item--moreTitle">
-                        <div class="flex">
-                            <div class="top-content_more--box">
-                                <p class="top-content_more--coming">
-                                    coming soon
-                                </p>
-                                <p class="top-content_more--text">
-                                    楽しい企画をたのしもう！
-                                </p>
-                            </div>
+                        <div class="top-content_more--box">
+                            <p class="top-content_more--coming">
+                                coming soon
+                            </p>
+                            <p class="top-content_more--text">
+                                楽しい企画をたのしもう！
+                            </p>
                         </div>
                     </div>
-                    <img src="/assets/img/top/heart.png" alt="" class="top-content_item--deco">
+                    <img src="/assets/img/top/heart.png" alt="" class="top-content_item--heart">
                 </div>
 
             </div>
         </section>
 
     </main>
-    <!-- partisal/footer.htmlの読み込み -->
-    <!-- <div id="js-footer"></div> -->
     <footer class="footer">
-        <img src="/assets/img/common/footer_back.png" alt="" class="footer-back">
+        <div class="footer-bg"></div>
         <div class="container-fv footer-container">
-            <img src="/assets/img/top/footer_img_btm.png" alt="" class="footer-img_btm">
-            <img src="/assets/img/top/shrimp.png" alt="" class="footer-ebi_img ebi-img scroll-anim scrollRotate">
+            <img src="/assets/img/common/under_shrimp.png" alt="" class="footer-img_btm">
+            <img src="/assets/img/common/shrimp.png" alt="" class="footer-ebi_img ebi-img rotateRightZTrigger">
             <div class="footer-img">
                 <img src="/assets/img/common/footer_logo.png" alt="" class="footer-logo">
                 <img src="/assets/img/common/onlinestore.png" alt="" class="footer-online">

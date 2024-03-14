@@ -1,34 +1,45 @@
 @use'../foundation/variables' as v;
 
 .footer {
-    background-color: v.$bg-dblue;
-    margin-top: 0px;
-    padding: 25px 0 30px 0;
+    height: 105px;
     position: relative;
 
     @include v.tab{
-        background-color: v.$bg-dblue;
-        // margin-top: -100px;
-        padding: 115px 0 90px 0;
+        height: 275px;
     }
+}
+.footer-bg{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: v.$bg-dblue;
+
     &:after{
-        position: absolute;
         content: "";
+        display: inline-block;
         background-image: url(/assets/img/common/footer_back.png);
-        z-index: 2;
-        top: 0;
-        left: 0;
         background-size: cover;
         background-position: 0;
         width: 100%;
-        padding-top: 15%;
-}
-.footer-back{
-    position: absolute;
-    bottom: 0;
+        height: 100%;
+        position: relative;
+        z-index: 2;
+    }
 }
 .footer-container{
     position: relative;
+}
+.footer-img{
+    position: absolute;
+    z-index: 3;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 25px;
+    @include v.tab{
+        top: 80px;
+    }
+
 }
 .footer-logo{
     width: 131px;
@@ -50,37 +61,41 @@
     }
 }
 .footer-img_btm{
-    width: 92px;
-    top: -50px;
-    left: 0;
+    width: 120px;
+    top: -40px;
+    left: -10px;
     position: absolute;
+    z-index: 3;
     @include v.tab{
-        width: 235px;
-        top: -150px;
-        // left: 10%;
+        width: 310px;
+        top: -80px;
+        left: 80px;
     }
 }
 .footer-ebi_img{
-    width: 59px;
+    width: 85px;
     position: absolute;
-    top: -20px;
-    left: 10px;
+    z-index: 4;
+    top: -5px;
+    left: 5px;
     @include v.tab{
-        width: 111px;
-        top: -150px;
-        left: 10%;
+        width: 230px;
+        top: -9px;
+        left: 9%;
     }
 }
 
-.scroll-anim.ready {
-    transition: all 4s ease-in;
+.rotateRightZ{
+    animation-name:rotateRightZAnime;
+    animation-duration:4s;
+    animation-fill-mode:forwards;
 }
-.scroll-anim.ready.active {
-    opacity: 1;
-}
-.scrollRotate.ready {
-    transform: rotate(0deg);
-}
-.scrollRotate.ready.active {
-    transform: rotate(360deg);
+
+@keyframes rotateRightZAnime{
+    from{
+        transform: rotateZ(0);
+        }
+    to{
+        transform: rotateZ(360deg);
+    }
 }

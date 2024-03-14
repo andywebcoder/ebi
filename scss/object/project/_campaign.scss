@@ -1,0 +1,70 @@
+@use "../../foundation/variables" as v;
+
+.campaign-fv{
+    background-color: v.$text-bpink;
+}
+.campaign-fv_container{
+    position: relative;
+    height: 254px;
+}
+.campaign-fv_circle{
+    // background-color: v.$bg-cream;
+    background-color: blue;
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50%;
+}
+.campaign-fv_circleImg{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 30%;
+    width: 295px;
+}
+.campaign-fv_heart{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 200px;
+
+
+}
+
+.campaign-draw{
+    background-color: v.$bg-cream;
+}
+.campaign-draw_title{
+    font-family: v.$TsukuGoPro;
+    color: v.$text-pink;
+    font-weight: bold;
+    font-size: 49px;
+    line-height: calc(73.62px/49px);
+    letter-spacing: 0.09em;
+    text-align: center;
+    padding-top: 150px;
+}
+.campaign-draw_img{
+    width: 860px;
+    margin: 0 auto;
+}
+
+.campaign-charm{
+    padding: 50px 0;
+}
+.campaign-charm_title{
+    font-family: v.$TsukuGoPro;
+    color: v.$text-pink;
+    font-weight: bold;
+    font-size: 49px;
+    line-height: calc(66.71px/49px);
+    letter-spacing: 0.13em;
+    text-align: center;
+}
+
+
+
+

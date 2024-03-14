@@ -10,101 +10,13 @@ body.is-open {
     display: none;
     @include v.tab{
         display: block;
-        width: 288px;
+        width: 274px;
         position: fixed;
         z-index: 980;
-        // left: 75px;
-        top: 65px;
+        top: 70px;
+        transition: transform .3s;
     }
 }
-
-// &-nav {
-//     display: none;
-// 
-//     @include v.tab {
-//         display: block;
-//         background-color: v.$main-navy;
-//     }
-// 
-//     &_list {
-//         justify-content: space-between;
-//         align-items: center;
-// 
-//         li {
-// 
-//             flex: 1;
-//             position: relative;
-// 
-//             &::before {
-//                 content: "";
-//                 width: 1px;
-//                 height: 40px;
-//                 display: block;
-//                 background-color: v.$base-white;
-//                 position: absolute;
-//                 left: 0;
-//                 top: 50%;
-//                 transform: translateY(-50%);
-//             }
-//             img{
-//                 filter: v.$filter-base-white;
-//             }
-// 
-//             &:last-of-type {
-//                 &::after {
-//                     content: "";
-//                     width: 1px;
-//                     height: 40px;
-//                     display: block;
-//                     background-color: v.$base-white;
-//                     position: absolute;
-//                     right: 0;
-//                     top: 50%;
-//                     transform: translateY(-50%);
-//                 }
-// 
-//             }
-// 
-//         }
-// 
-//         a {
-//             padding: 4px;
-//             font-size: 12px;
-//             justify-content: center;
-//             align-items: center;
-//             gap: 8px;
-//             color: v.$base-white;
-// 
-// 
-//             @include v.tab {
-//                 padding: 12px 8px;
-//                 font-size: 14px;
-//                 transition: .3s all;
-// 
-//                 &:hover {
-//                     background-color: rgba(v.$link-blue, .8);
-//                 }
-//             }
-// 
-//         }
-// 
-//         img {
-//             @include v.tab {
-//                 width: 20px;
-//                 height: 20px;
-//             }
-// 
-//             @include v.lt {
-//                 width: 24px;
-//                 height: 24px;
-//             }
-//         }
-// 
-//     }
-// 
-// 
-// }
-
 .header-hamburger{
     margin-right: 70px;
     display: block;
@@ -114,12 +26,16 @@ body.is-open {
     margin-left: auto;
     position: relative;
 }
+.header-hamburger_line{
+    display: none;
+}
 .header-hamburger_line.active{
+    display: block;
     position: absolute;
-    width: 52px;
+    width: 70px;
     height: 3px;
     transition: inherit;
-
+    animation: fadein 0.5s forwards;
     &:before,
     &:after {
         position: absolute;
@@ -129,38 +45,41 @@ body.is-open {
         content: "";
         background-color: inherit;
         transition: inherit;
+        animation: fadein 0.5s forwards;
     }
 
     &:before {
-        top: 45px;
-        right: 60px;
+        top: 78px;
+        right: 13px;
         background-color: v.$text-pink;
         transform: rotate(-45deg);
     }
 
     &:after {
-        top: 45px;
-        right: 60px;
+        top: 78px;
+        right: 10px;
         background-color: v.$text-pink;
         transform: rotate(45deg);
     }
 }
+
 .header-nav{
-    display: none;
-    transition: opacity .5s, visibility .5s;
+    opacity: 0;
     visibility: hidden;
-}
-.header-nav.active{
-    opacity: 1;
-    visibility: visible;
-    background-color: v.$bg-cream;
+    transition: 0.5s;
     position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
     width: 100%;
-    display: block;
     z-index: 980;
+    background-color: v.$bg-cream;
+}
+.header-nav.active{
+    opacity: 1;
+    visibility: visible;
+    
+    
 }
 .header-nav_lists{
     width: 100%;
@@ -168,18 +87,31 @@ body.is-open {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0 20px;
 }
 .header-nav_flex{
-    
-    @include v.tab{
+    flex-direction: column;
+
+    @include v.lt{
         flex-direction: row;
         justify-content: center;
-        gap: 70px;
+        gap: 100px;
     }
-
+}
+.header-nav_logoLink{
+    margin-right: auto;
 }
 .header-nav_logo{
-    width: 345px;
+    width: 221px;
+    padding-bottom: 35px;
+    @include v.tab{
+        width: 390px;
+    }
+    @include v.lt{
+        padding-bottom: 0;
+        margin-top: -40px;
+    }
+
 }
 .header-nav_list{
     li{
@@ -187,13 +119,20 @@ body.is-open {
 
         &:nth-child(2),
         &:nth-child(3){
-            padding-bottom: 30px;
+            padding-bottom: 18px;
         }
         &:nth-child(4){
-            padding-bottom: 50px;
+            padding-bottom: 30px;
+            @include v.lt{
+                padding-bottom: 50px;
+            }
+
         }
         &:nth-child(5){
-            padding-bottom: 17px;
+            padding-bottom: 30px;
+            @include v.lt{
+                padding-bottom: 17px;
+            }
         }
         &:last-of-type{
             padding-bottom: 0;
@@ -201,37 +140,58 @@ body.is-open {
     }
 }
 .header-nav_link{
-    gap: 12px;
+    display: inline-block;
+    gap: 10px;
 }
 .header_nav_top{
-    width: 131px;
+    width: 105px;
+    @include v.tab{
+        width: 145px;
+    }
 }
 .header_nav_135{
-    width: 202px;
+    width: 157px;
+    @include v.tab{
+        width: 220px;
+    }
 }
 .header_nav_icon{
-    width: 56px;
+    width: 43px;
+    @include v.tab{
+        width: 65px;
+    }
 }
 .header-nav_text{
     font-family: v.$kinto_sans;
     font-weight: 700;
-    font-size: 26px;
+    font-size: 14px;
     letter-spacing: 0.14em;
     line-height: calc(26.74px/18.88px);
+
+    @include v.tab{
+        font-size: 26px;
+        line-height: calc(26.74px/18.88px);
+    }
 }
 .header-nav_online{
     font-family: v.$kinto_sans;
     font-weight: 700;
-    font-size: 26px;
+    font-size: 14px;
     letter-spacing: 0.05em;
     line-height: calc(26.74px/18.88px);
+    @include v.tab{
+        font-size: 22px;
+    }
 }
 .header-nav_insta{
     font-family: v.$kinto_sans;
     font-weight: 700;
-    font-size: 26px;
+    font-size: 14px;
     letter-spacing: 0.08em;
     line-height: calc(26.74px/18.88px);
+    @include v.tab{
+        font-size: 22px;
+    }
 }
 .header-nav_text--pink{
     color: v.$text-pink;
