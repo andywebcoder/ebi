@@ -31,7 +31,7 @@ $(function($) {
 
 // スクロールして表示領域に入ったらclass付与
 $(function () {
-    $(".js-rotate,.js-popup,.js-content-sp,.js-popup_img1").on("inview", function () {
+    $(".js-rotate,.js-popup,.js-content-sp,").on("inview", function () {
         $(this).addClass("is-inview");
     });
 });
