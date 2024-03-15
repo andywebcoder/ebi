@@ -101,8 +101,8 @@
                     <img src="/assets/img/common/shrimp.png" alt="" class="top-fv_circle--right ebi-img">
                 </div>
                 <img src="/assets/img/top/fv_135.png" alt="" class="top-fv_135">
-                <img src="/assets/img/top/gear.png" alt="" class="top-fv_leftImg">
-                <img src="/assets/img/top/heart.png" alt="" class="top-fv_rightImg">
+                <img src="/assets/img/top/gear.png" alt="" class="top-fv_leftImg js-popup">
+                <img src="/assets/img/top/heart.png" alt="" class="top-fv_rightImg js-popup">
                 <h2 class="top-fv_title ">
                     <span class="top-fv_title--span1">
                         <p>つ</p>
@@ -154,22 +154,24 @@
                         坂角の長い歴史にあるのは様々なご縁け沢<br>
                         山のだけ沢山の食ゆるのは様るのは様かり
                     </p>
-                    <img src="/assets/img/top/manga1.png" alt="" class="top-collabo_img1">
+                    <div class="">
+                        
+                    </div>
+                    <img src="/assets/img/top/manga1.png" alt="" class="top-collabo_img1 js-popup_img1">
                     <img src="/assets/img/top/manga2.png" alt="" class="top-collabo_img2">
                     <img src="/assets/img/top/manga3.png" alt="" class="top-collabo_img3">
                     <img src="/assets/img/top/manga4.png" alt="" class="top-collabo_img4">
                     <img src="/assets/img/top/manga5.png" alt="" class="top-collabo_img5">
+                    <img src="/assets/img/top/content_left1.png" alt="" class="top-collabo_spimg js-popup">
                 </div>
-                <div class="top-collabo_spimg">
-                    <img src="/assets/img/top/content_left1.png" alt="">
-                </div>
+
 
                 <div class="flex flex-column top-collabo_flex">
                     <div class="top-collabo_manga1">
                     <a href="/" class="top-collabo_imgLink hover-opacity">
                         <img src="/assets/img/top/collabo1.png" alt="" class="top-collabo_img">
                         <img src="/assets/img/top/collabo1_left.png" alt="" class="top-collabo1_left">
-                        <img src="/assets/img/top/gear.png" alt="" class="top-collabo1_sp">
+                        <img src="/assets/img/top/gear.png" alt="" class="top-collabo1_sp js-popup">
                     
                         <p class="top-collabo1_text">
                             <span>人気漫画家が</span>
@@ -203,8 +205,8 @@
                 <img src="/assets/img/top/content_back.png" alt="" class="top-content_back">
             </picture>
             <div class="container-fv top-content_container">
-                <img src="/assets/img/top/event_deco_sp.png" alt="" class="content-sp_img">
-                <img src="/assets/img/top/content_left1.png" alt="" class="content-left_img1">
+                <img src="/assets/img/top/event_deco_sp.png" alt="" class="content-sp_img js-content-sp">
+                <img src="/assets/img/top/content_left1.png" alt="" class="content-left_img1 js-popup">
                 <h2 class="top-content_title">
                     <!-- <img src="/assets/img/top/collabo_hert.png" alt="" class="top-content_heart"> -->
                     <img src="/assets/img/top/content_title.png" alt="" class="top-content_titleImg">
@@ -227,7 +229,7 @@
                             </div>
                         </div> -->
                     </div>
-                    <img src="/assets/img/top/gear.png" alt="" class="top-content_item--gear">
+                    <img src="/assets/img/top/gear.png" alt="" class="top-content_item--gear js-popup">
                 </div>
 
                 <div class="top-content_flex top-content_flex--event">
@@ -246,7 +248,7 @@
                             <img src="/assets/img/top/event_img.png" alt="" class="top-content_item--img">
                         </div> -->
                     </div>
-                    <img src="/assets/img/top/event_deco.png" alt="" class="top-content_item--deco">
+                    <img src="/assets/img/top/event_deco.png" alt="" class="top-content_item--deco js-popup">
                 </div>
 
                 <div class="top-content_flex top-content_flex--coming">
@@ -261,7 +263,7 @@
                             </p>
                         </div>
                     </div>
-                    <img src="/assets/img/top/heart.png" alt="" class="top-content_item--heart">
+                    <img src="/assets/img/top/heart.png" alt="" class="top-content_item--heart js-popup">
                 </div>
 
             </div>
@@ -271,8 +273,10 @@
     <footer class="footer">
         <div class="footer-bg"></div>
         <div class="container-fv footer-container">
-            <img src="/assets/img/common/under_shrimp.png" alt="" class="footer-img_btm">
-            <img src="/assets/img/common/shrimp.png" alt="" class="footer-ebi_img ebi-img rotateRightZTrigger">
+            <div class="js-popup">
+                <img src="/assets/img/common/under_shrimp.png" alt="" class="footer-img_btm">
+                <img src="/assets/img/common/shrimp.png" alt="" class="footer-ebi_img ebi-img js-rotate">
+            </div>
             <div class="footer-img">
                 <img src="/assets/img/common/footer_logo.png" alt="" class="footer-logo">
                 <img src="/assets/img/common/onlinestore.png" alt="" class="footer-online">
@@ -282,6 +286,7 @@
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="/assets/js/jquery.inview.min.js"></script>
     <script src="/assets/js/site.js"></script>
 </body>
 

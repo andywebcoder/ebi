@@ -24,7 +24,7 @@
         width: 100%;
         height: 100%;
         position: relative;
-        z-index: 2;
+        z-index: 0;
     }
 }
 .footer-container{
@@ -67,21 +67,43 @@
     position: absolute;
     z-index: 3;
     @include v.tab{
+        width: 250px;
+        top: -80px;
+        left: -30px;
+    }
+    @include v.lt{
         width: 310px;
         top: -80px;
         left: 80px;
     }
+}
+@keyframes ebi_footer {
+    0% {
+    transform: translateX(50%) rotate(0deg);
+    }
+    100% {
+    transform: translateX(50%) rotate(360deg);
+    }
+}
+.js-rotate.is-inview{
+    animation: ebi_footer 6s linear;
 }
 .footer-ebi_img{
     width: 85px;
     position: absolute;
     z-index: 4;
     top: -5px;
-    left: 5px;
+    left: -11%;
+    transform: translateX(50%);
     @include v.tab{
+        width: 180px;
+        top: -15px;
+        left: -12%;
+    }
+    @include v.lt{
         width: 230px;
         top: -9px;
-        left: 9%;
+        left: 0%;        
     }
 }
 

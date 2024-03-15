@@ -32,7 +32,7 @@ body.is-open {
 .header-hamburger_line.active{
     display: block;
     position: absolute;
-    width: 70px;
+    width: 90px;
     height: 3px;
     transition: inherit;
     animation: fadein 0.5s forwards;
@@ -49,15 +49,15 @@ body.is-open {
     }
 
     &:before {
-        top: 78px;
-        right: 13px;
+        top: 65px;
+        right: 75px;
         background-color: v.$text-pink;
         transform: rotate(-45deg);
     }
 
     &:after {
-        top: 78px;
-        right: 10px;
+        top: 65px;
+        right: 75px;
         background-color: v.$text-pink;
         transform: rotate(45deg);
     }
@@ -95,7 +95,7 @@ body.is-open {
     @include v.lt{
         flex-direction: row;
         justify-content: center;
-        gap: 100px;
+        gap: 35px;
     }
 }
 .header-nav_logoLink{
@@ -115,23 +115,25 @@ body.is-open {
 }
 .header-nav_list{
     li{
-        padding-bottom: 45px;
-
-        &:nth-child(2),
+        &:nth-child(1){
+            padding-bottom: 15px;
+        }
+        &:nth-child(2){
+            padding-bottom: 15px;
+        }
         &:nth-child(3){
-            padding-bottom: 18px;
+            padding-bottom: 5px;
         }
         &:nth-child(4){
             padding-bottom: 30px;
             @include v.lt{
-                padding-bottom: 50px;
+                padding-bottom: 30px;
             }
-
         }
         &:nth-child(5){
             padding-bottom: 30px;
             @include v.lt{
-                padding-bottom: 17px;
+                padding-bottom: 10px;
             }
         }
         &:last-of-type{
@@ -158,7 +160,7 @@ body.is-open {
 .header_nav_icon{
     width: 43px;
     @include v.tab{
-        width: 65px;
+        width: 60px;
     }
 }
 .header-nav_text{
