@@ -32,10 +32,14 @@ body.is-open {
 .header-hamburger_line.active{
     display: block;
     position: absolute;
-    width: 90px;
+    width: 60px;
     height: 3px;
     transition: inherit;
     animation: fadein 0.5s forwards;
+    @include v.tab{
+        width: 90px;
+    }
+
     &:before,
     &:after {
         position: absolute;
@@ -50,16 +54,22 @@ body.is-open {
 
     &:before {
         top: 65px;
-        right: 75px;
+        right: 5px;
         background-color: v.$text-pink;
         transform: rotate(-45deg);
+        @include v.tab{
+            right: 75px;
+        }
     }
 
     &:after {
         top: 65px;
-        right: 75px;
+        right: 5px;
         background-color: v.$text-pink;
         transform: rotate(45deg);
+        @include v.tab{
+            right: 75px;
+        }
     }
 }
 
